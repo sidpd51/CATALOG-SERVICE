@@ -24,6 +24,7 @@ module.exports = {
             ISBN: {
                 type: Sequelize.STRING,
                 allowNull: false,
+                unique: true,
             },
             publishedDate: {
                 type: Sequelize.DATE,
@@ -39,8 +40,8 @@ module.exports = {
             },
             status: {
                 type: Sequelize.ENUM,
-                values: ["Active", "Other"],
-                defaultValue: "Active",
+                values: ["active", "other"],
+                defaultValue: "active",
             },
             createdAt: {
                 allowNull: false,

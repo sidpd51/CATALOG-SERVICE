@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
             ISBN: {
                 type: DataTypes.STRING,
                 allowNull: false,
+                unique: true
             },
             publishedDate: {
                 type: DataTypes.DATE,
@@ -43,8 +44,8 @@ module.exports = (sequelize, DataTypes) => {
             },
             status: {
                 type: DataTypes.ENUM,
-                values: ["Active", "Other"],
-                defaultValue: "Active",
+                values: ["active", "other"],
+                defaultValue: "active",
             },
         },
         {
