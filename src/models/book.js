@@ -25,10 +25,10 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            ISBN: {
+            isbn: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                unique: true
+                unique: true,
             },
             publishedDate: {
                 type: DataTypes.DATE,

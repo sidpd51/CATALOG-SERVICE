@@ -23,9 +23,9 @@ class BookRepository {
             };
         }
 
-        if (data.ISBN) {
-            filter.ISBN = {
-                [Op.startsWith]: data.ISBN,
+        if (data.isbn) {
+            filter.isbn = {
+                [Op.startsWith]: data.isbn,
             };
         }
 
@@ -66,9 +66,10 @@ class BookRepository {
         }
     }
 
-    async getAll(filter) {
+    async getAllBooks(filter) {
         try {
-            const filterObject = await this.#createFilter(filter);
+            const filterObject = this.#createFilter(filter);
+            console.log(filterObject)
             const books = await Book.findAll({
                 where: filterObject,
             });
@@ -81,6 +82,8 @@ class BookRepository {
 
     async updateBook(bookId, data) {
         try {
+            console.log(bookId)
+            console.log(data)
             await Book.update(data, {
                 where: {
                     id: bookId,

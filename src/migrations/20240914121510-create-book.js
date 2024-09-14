@@ -21,7 +21,7 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            ISBN: {
+            isbn: {
                 type: Sequelize.STRING,
                 allowNull: false,
                 unique: true,
